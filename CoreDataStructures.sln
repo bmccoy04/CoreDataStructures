@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDataStructures", "CoreDataStructures\CoreDataStructures.csproj", "{A7A39227-C75E-4BFA-BC2E-04687B994A09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWithDataStructures.Tests", "CoreWithDataStructures.Tests\CoreWithDataStructures.Tests.csproj", "{408EAA20-328B-4FE5-9B16-370618F4BB59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{A7A39227-C75E-4BFA-BC2E-04687B994A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7A39227-C75E-4BFA-BC2E-04687B994A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7A39227-C75E-4BFA-BC2E-04687B994A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408EAA20-328B-4FE5-9B16-370618F4BB59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408EAA20-328B-4FE5-9B16-370618F4BB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408EAA20-328B-4FE5-9B16-370618F4BB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408EAA20-328B-4FE5-9B16-370618F4BB59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
