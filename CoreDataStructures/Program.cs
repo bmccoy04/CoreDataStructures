@@ -15,9 +15,6 @@ namespace CoreDataStructures
             Console.WriteLine(p.Name);
             var pTwo = list.Where(x => x.Id == 2);
             Console.Write(pTwo.Name);
-
-            var pNull = list.Where(x => x.Id == 4);
-
         }
     }
 
