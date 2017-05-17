@@ -14,7 +14,10 @@ namespace CoreDataStructures
             var p = list.Where(x => x.Id == 1);
             Console.WriteLine(p.Name);
             var pTwo = list.Where(x => x.Id == 2);
-            Console.Write(pTwo.Name);
+            Console.WriteLine(pTwo.Name);
+            
+            var pThree = list.Where(x => x.Id == 3);
+            Console.WriteLine("null");
         }
     }
 
@@ -47,7 +50,7 @@ namespace CoreDataStructures
             {
                 if (current.Next != null)
                     current = current.Next;
-                
+                Console.WriteLine("console: " + current.Next != null);
             } while (current.Next != null);
 
             current.Next = node;
@@ -60,13 +63,15 @@ namespace CoreDataStructures
         public T Where(Func<T, bool> f)
         {
             var current = _head;
-            do
+            while (current.Next != null)
             {
-                if (f(current.Data))
-                    return current.Data;
+				if (f(current.Data))
+					return current.Data;
 
-                current = current.Next;
-            } while (current.Next != null);
+				current = current.Next;
+            }
+
+            Console.WriteLine("end");
 
             return (T)new object();
         }
