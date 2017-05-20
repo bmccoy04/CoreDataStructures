@@ -15,9 +15,13 @@ namespace CoreDataStructures
             Console.WriteLine(p.Name);
             var pTwo = list.Where(x => x.Id == 2);
             Console.WriteLine(pTwo.Name);
-            
+
             var pThree = list.Where(x => x.Id == 3);
-            Console.WriteLine("null");
+            Console.WriteLine(pThree);
+            list.PrintAll();
+
+            list.ForEach(x => x);
+
         }
     }
 
@@ -36,22 +40,18 @@ namespace CoreDataStructures
             var node = new Node<T>
             {
                 Data = o,
-                Next = _head
+                Next = null
             };
 
             if (_head == null){
                 _head = node;
                 return;
             }
-                
 
             var current = _head;
-            do
-            {
-                if (current.Next != null)
-                    current = current.Next;
-                Console.WriteLine("console: " + current.Next != null);
-            } while (current.Next != null);
+            while(current.Next != null){
+                current = current.Next;
+            }
 
             current.Next = node;
         }
@@ -63,17 +63,33 @@ namespace CoreDataStructures
         public T Where(Func<T, bool> f)
         {
             var current = _head;
-            while (current.Next != null)
-            {
-				if (f(current.Data))
-					return current.Data;
 
-				current = current.Next;
-            }
+            do
+            {
+                if (f(current.Data))
+                    return current.Data;
+
+                current = current.Next;
+            } while (current != null);
 
             Console.WriteLine("end");
 
-            return (T)new object();
+            return default(T);
+        }
+
+        public void PrintAll()
+        {
+            var current = _head;
+            do
+            {
+				Console.WriteLine(current.Data);
+                current = current.Next;
+            } while (current != null);
+        }
+
+        public void ForEach(Func<T, T> p)
+        {
+            throw new NotImplementedException();
         }
     }
 
