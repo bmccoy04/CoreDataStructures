@@ -28,12 +28,22 @@ namespace CoreDataStructures.List
 			current.Next = node;
 		}
 
-		public T GetLast()
+		public T GetFirst()
 		{
 			return _head.Data;
 		}
 
-		public T Where(Func<T, bool> f)
+        public T GetLast(){
+            var current = _head;
+
+            while(current.Next != null){
+                current = current.Next;
+            }
+
+            return current.Data;
+        }
+
+		public T FirstOrDefault(Func<T, bool> f)
 		{
 			var current = _head;
 
@@ -45,8 +55,6 @@ namespace CoreDataStructures.List
 				current = current.Next;
 			} while (current != null);
 
-			Console.WriteLine("end");
-
 			return default(T);
 		}
 
@@ -55,7 +63,6 @@ namespace CoreDataStructures.List
 			var current = _head;
 			do
 			{
-				Console.WriteLine(current.Data);
 				current = current.Next;
 			} while (current != null);
 		}
